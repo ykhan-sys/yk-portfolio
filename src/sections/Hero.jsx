@@ -8,7 +8,7 @@ export const Hero = () => {
       <div className="absolute inset-0">
         <img
           src="/hero-bg.jpg"
-          alt="Background"
+          alt=""
           className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background"></div>
@@ -60,13 +60,6 @@ export const Hero = () => {
                 Hi, I'm Yousuf Khan — a cloud engineer specializing in AWS,
                 Azure and GCP.
               </p>
-            </div>
-
-            {/* CTAs */}
-            <div>
-              <Button size="large">
-                Contact Me <ArrowRight className="w-5 h-5" />
-              </Button>
             </div>
           </div>
           {/* right Column - Profile Image */}

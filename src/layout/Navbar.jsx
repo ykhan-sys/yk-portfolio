@@ -6,7 +6,6 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export const Navbar = () => {
@@ -36,10 +35,6 @@ export const Navbar = () => {
           </div>
         </div>
 
-        <div className="hidden md:block">
-          <Button size="small">Contact Me</Button>
-        </div>
-
         {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2 text-foreground cursor-pointer"
@@ -62,7 +57,6 @@ export const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Button size="small">Contact Me</Button>
           </div>
         </div>
       )}
