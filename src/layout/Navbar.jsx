@@ -19,7 +19,7 @@ export const Navbar = () => {
           href="#"
           className="flex items-center hover:opacity-80 transition-opacity"
         >
-          <img src="/logo.svg" alt="Yousuf Khan Logo" className="h-40 w-auto invert" />
+          <img src="/logo.svg" alt="Yousuf Khan - Senior Cloud Infrastructure Engineer Logo" className="h-40 w-auto invert" />
         </a>
 
         <div className="hidden md:flex items-center gap-1">
