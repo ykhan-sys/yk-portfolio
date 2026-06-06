@@ -17,9 +17,9 @@ export const Navbar = () => {
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a
           href="#"
-          className="text-2xl font-bold tracking-tight hover:text-primary"
+          className="flex items-center hover:opacity-80 transition-opacity"
         >
-          YK<span className="text-primary">.</span>
+          <img src="/logo.svg" alt="Yousuf Khan Logo" className="h-40 w-auto invert" />
         </a>
 
         <div className="hidden md:flex items-center gap-1">
