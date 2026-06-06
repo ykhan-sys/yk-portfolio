@@ -1,5 +1,5 @@
-import { Button } from "@/components/button";
-import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/Button";
+import { ArrowRight, MapPin } from "lucide-react";
 import { useState } from "react";
 
 export const Hero = () => {
@@ -46,10 +46,14 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text content */}
           <div className="space-y-8">
-            <div className="animate-fade-in">
+            <div className="animate-fade-in flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 AWS Solutions Architect
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-muted-foreground">
+                <MapPin className="w-4 h-4 text-primary" />
+                Dallas, TX, USA
               </span>
             </div>
 
@@ -66,7 +70,7 @@ export const Hero = () => {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Yousuf Khan — a Senior Cloud Infrastructure Engineer specializing in AWS enterprise-scale solutions, automation, and CI/CD.
+                Hi, I'm Yousuf Khan — a Senior Cloud Infrastructure Engineer based in Dallas, Texas, specializing in AWS enterprise-scale solutions, automation, and CI/CD.
               </p>
             </div>
           </div>
