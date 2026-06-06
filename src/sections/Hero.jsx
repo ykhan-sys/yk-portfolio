@@ -1,7 +1,17 @@
 import { Button } from "@/components/button";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 
 export const Hero = () => {
+  const [dots] = useState(() =>
+    [...Array(30)].map(() => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      animationDuration: `${15 + Math.random() * 20}s`,
+      animationDelay: `${Math.random() * 5}s`,
+    }))
+  );
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
@@ -16,17 +26,16 @@ export const Hero = () => {
 
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, index) => (
+        {dots.map((dot, index) => (
           <div
+            key={index}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${
-                15 + Math.random() * 20
-              }s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
+              left: dot.left,
+              top: dot.top,
+              animation: `slow-drift ${dot.animationDuration} ease-in-out infinite`,
+              animationDelay: dot.animationDelay,
             }}
           />
         ))}
@@ -40,7 +49,7 @@ export const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Senior Solutions Architect
+                AWS Solutions Architect
               </span>
             </div>
 
@@ -50,15 +59,14 @@ export const Hero = () => {
                 Engineering{" "}
                 <span className="text-primary glow-text">cloud</span>
                 <br />
-                solutions with
+                infrastructure with
                 <br />
                 <span className="font-serif italic font-normal text-white">
                   precision.
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Yousuf Khan — a cloud engineer specializing in AWS,
-                Azure and GCP.
+                Hi, I'm Yousuf Khan — a Senior Cloud Infrastructure Engineer specializing in AWS enterprise-scale solutions, automation, and CI/CD.
               </p>
             </div>
           </div>
@@ -68,3 +76,4 @@ export const Hero = () => {
     </section>
   );
 };
+
