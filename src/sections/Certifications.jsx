@@ -4,13 +4,13 @@ export const Certifications = () => {
   const certifications = [
     "AWS Certified SysOps Administrator",
     "Microsoft Certified Azure Solutions Architect Expert",
-    "GCP Certified Associate Cloud Engineer",
     "Microsoft Certified Azure Administrator",
+    "GCP Certified Associate Cloud Engineer",
+    "GCP - Gen AI Leader",
     "Red Hat Certified Engineer (RHCE)",
     "Red Hat Certified System Administrator (RHCSA)",
-    "CKA - Certified Kubernetes Administrator",
-    "GCP - Gen AI Leader",
     "IBM Certified DB2 DBA 10.1 LUW",
+    "CKA - Certified Kubernetes Administrator",
   ];
 
   return (
