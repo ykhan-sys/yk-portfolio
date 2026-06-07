@@ -10,8 +10,8 @@ export const Home = () => {
     <main>
       <Hero />
       <About />
-      <Skills />
       <Certifications />
+      <Skills />
       <Projects />
       <FeaturedPosts />
     </main>
