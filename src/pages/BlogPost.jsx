@@ -47,15 +47,15 @@ export const BlogPost = () => {
     return (
       <div className="pt-32 container mx-auto px-6 text-center">
         <h1 className="text-4xl font-bold mb-4">Post not found</h1>
-        <Link to="/blog" className="text-primary hover:underline">← Back to Blog</Link>
+        <Link to="/notes" className="text-primary hover:underline">← Back to Notes</Link>
       </div>
     );
   }
 
   return (
     <div className="pt-32 pb-20 container mx-auto px-6 max-w-6xl min-h-screen">
-      <Link to="/blog" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-8 transition-colors">
-        <ArrowLeft size={16} /> Back to Blog
+      <Link to="/notes" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-8 transition-colors">
+        <ArrowLeft size={16} /> Back to Notes
       </Link>
       
       <div className="grid lg:grid-cols-12 gap-12">

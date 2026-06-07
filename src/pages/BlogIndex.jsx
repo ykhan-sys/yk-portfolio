@@ -25,13 +25,13 @@ export const BlogIndex = () => {
       ...attributes,
       date,
       slug,
-      fullRoute: `/blog/${date}/${slug}`
+      fullRoute: `/notes/${date}/${slug}`
     };
   }).sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <div className="pt-32 pb-20 container mx-auto px-6 max-w-4xl min-h-screen">
-      <h1 className="text-4xl font-bold mb-12">Blog</h1>
+      <h1 className="text-4xl font-bold mb-12">Notes</h1>
       
       <div className="space-y-8">
         {posts.map((post) => (

@@ -49,7 +49,7 @@ export const Hero = () => {
             <div className="animate-fade-in flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                AWS Solutions Architect
+                Senior Cloud Architect
               </span>
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
@@ -70,7 +70,10 @@ export const Hero = () => {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Yousuf Khan — a Senior Cloud Infrastructure Engineer based in Dallas, Texas, specializing in AWS enterprise-scale solutions, automation, and CI/CD.
+                Hi, I'm Yousuf Khan — a Senior Cloud Architect based in Dallas, Texas, specializing in{" "}
+                <span className="text-xl font-bold text-foreground glow-text">
+                  multi-cloud enterprise-scale solutions, automation, and CI/CD.
+                </span>
               </p>
             </div>
           </div>

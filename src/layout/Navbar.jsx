@@ -7,6 +7,7 @@ const navLinks = [
   { id: "skills", label: "Skills" },
   { id: "certifications", label: "Certifications" },
   { id: "projects", label: "Projects" },
+  { id: "notes", label: "Notes" },
 ];
 
 export const Navbar = () => {
@@ -50,12 +51,6 @@ export const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Link
-              to="/blog"
-              className={`px-4 py-2 text-sm rounded-full hover:bg-surface ${location.pathname.startsWith('/blog') ? 'text-foreground bg-surface' : 'text-muted-foreground hover:text-foreground'}`}
-            >
-              Blog
-            </Link>
           </div>
         </div>
 
@@ -82,13 +77,6 @@ export const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Link
-              to="/blog"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-lg text-muted-foreground hover:text-foreground py-2"
-            >
-              Blog
-            </Link>
           </div>
         </div>
       )}

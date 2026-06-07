@@ -3,6 +3,7 @@ import { About } from "@/sections/About";
 import { Skills } from "@/sections/Skills";
 import { Certifications } from "@/sections/Certifications";
 import { Projects } from "@/sections/Projects";
+import { FeaturedPosts } from "@/sections/FeaturedPosts";
 
 export const Home = () => {
   return (
@@ -12,6 +13,7 @@ export const Home = () => {
       <Skills />
       <Certifications />
       <Projects />
+      <FeaturedPosts />
     </main>
   );
 };
