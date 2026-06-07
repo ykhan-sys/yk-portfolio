@@ -4,8 +4,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
   { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
   { id: "certifications", label: "Certifications" },
+  { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
   { id: "notes", label: "Notes" },
 ];
