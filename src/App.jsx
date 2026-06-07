@@ -1,25 +1,21 @@
-import { Hero } from "@/sections/Hero";
-import { About } from "@/sections/About";
-import { Skills } from "@/sections/Skills";
-import { Certifications } from "@/sections/Certifications";
-import { Projects } from "@/sections/Projects";
-
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "@/layout/Navbar";
+import { Home } from "@/pages/Home";
+import { BlogIndex } from "@/pages/BlogIndex";
+import { BlogPost } from "@/pages/BlogPost";
 
 function App() {
   return (
-    <>
-      <div className="min-h-screen overflow-x-hidden">
+    <Router>
+      <div className="min-h-screen flex flex-col">
         <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Certifications />
-          <Projects />
-        </main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<BlogIndex />} />
+          <Route path="/blog/:date/:slug" element={<BlogPost />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 

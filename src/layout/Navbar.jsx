@@ -1,38 +1,61 @@
-import { Button } from "@/components/Button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#certifications", label: "Certifications" },
-  { href: "#projects", label: "Projects" },
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "certifications", label: "Certifications" },
+  { id: "projects", label: "Projects" },
 ];
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-background/90 backdrop-blur-md py-4 z-50 transition-all duration-300">
       <nav className="container mx-auto px-6 flex items-center justify-between">
-        <a
-          href="#"
+        <Link
+          to="/"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center hover:opacity-80 transition-opacity"
         >
           <img src="/logo.svg" alt="Yousuf Khan - Senior Cloud Infrastructure Engineer Logo" className="h-40 w-auto invert" />
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-1">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
             {navLinks.map((link, index) => (
               <a
                 key={index}
-                href={link.href}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
+                href={`#${link.id}`}
+                onClick={(e) => handleNavClick(e, link.id)}
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface cursor-pointer"
               >
                 {link.label}
               </a>
             ))}
+            <Link
+              to="/blog"
+              className={`px-4 py-2 text-sm rounded-full hover:bg-surface ${location.pathname.startsWith('/blog') ? 'text-foreground bg-surface' : 'text-muted-foreground hover:text-foreground'}`}
+            >
+              Blog
+            </Link>
           </div>
         </div>
 
@@ -52,12 +75,20 @@ export const Navbar = () => {
             {navLinks.map((link, index) => (
               <a
                 key={index}
-                href={link.href}
-                className="text-lg text-muted-foreground hover:text-foreground py-2"
+                href={`#${link.id}`}
+                onClick={(e) => handleNavClick(e, link.id)}
+                className="text-lg text-muted-foreground hover:text-foreground py-2 cursor-pointer"
               >
                 {link.label}
               </a>
             ))}
+            <Link
+              to="/blog"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-lg text-muted-foreground hover:text-foreground py-2"
+            >
+              Blog
+            </Link>
           </div>
         </div>
       )}
